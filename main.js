@@ -39,7 +39,7 @@ module.exports.handler = function (event, context, callback) {
                 data: dingmessage_stringified,
                 url: `https://oapi.dingtalk.com/robot/send?access_token=${accessToken}`
             };
-            axios(options);
+            return axios(options);
         })
         .then(() => {
             callback(null, true);
