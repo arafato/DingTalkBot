@@ -25,7 +25,7 @@ module.exports.handler = function (event, context, callback) {
         .then((stockRes) => {
             const quote = stockRes.data.BABA.quote;
             let msg = '*** Alibaba Stock Update ***\n';
-            msg += 'Yesterdays closing price: USD ' + quote.close + ' (' + quote.changePercent + '%)\n';
+            msg += 'Yesterdays closing price: USD ' + quote.close + ' (' + quote.changePercent * 100 + '%)\n';
             if (quote.change <= 0) {
                 msg += "Work harder, smarter and faster!!";
             } else {
